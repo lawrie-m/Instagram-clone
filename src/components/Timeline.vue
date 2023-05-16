@@ -19,24 +19,24 @@ const {user, loadingUser} = storeToRefs(userStore)
             <Cards v-if="user"/>
             <loginMessage v-else/>
         </div>
-        <div v-else class="timeline-spinner">
+        <div v-else class="timeline-spinner flex items-center justify-center h-9/10">
             <a-spin />
         </div>
     </Container>    
 </template>
 
 <style>
-.timeline-container { 
+/* .timeline-container { 
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px 0;
-}
-.timeline-spinner {
+} */
+
+/* .timeline-spinner {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 90vh;
-}
-
+} */
 </style>

@@ -6,8 +6,9 @@ const {VITE_BASE_PHOTO_URL} = import.meta.env
 </script>
 
 <template>
-    <div class="image-gallery-container">
+    <div class="image-gallery-container flex flex-wrap">
         <img 
+            class="m-1 w-48"
             v-for="post in props.posts" 
             :key="post.id" 
             :src="`${VITE_BASE_PHOTO_URL}${post.url}`" 
@@ -16,7 +17,7 @@ const {VITE_BASE_PHOTO_URL} = import.meta.env
 </template>
 
 <style scoped>
-.image-gallery-container {
+/* .image-gallery-container {
     display: flex;
     justify-content: left;
     flex-wrap: wrap;
@@ -25,5 +26,5 @@ const {VITE_BASE_PHOTO_URL} = import.meta.env
 img {
     margin: 5px;
     width: 200px;
-}
+} */
 </style>

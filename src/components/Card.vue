@@ -6,7 +6,7 @@ const {VITE_BASE_PHOTO_URL} = import.meta.env
 </script>
 
 <template>
-  <a-card hoverable style="width: 240px" class="card">
+  <a-card hoverable style="width: 240px" class="card !mb-5">
     <template #cover>
       <img alt="example" :src="`${VITE_BASE_PHOTO_URL}${post.url}`" />
     </template>
@@ -17,7 +17,7 @@ const {VITE_BASE_PHOTO_URL} = import.meta.env
 </template>
 
 <style scoped>
-.card {
+/* .card {
     margin-bottom: 20px;
-}
+} */
 </style>

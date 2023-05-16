@@ -25,16 +25,16 @@ const followUser = async () => {
 const unfollowUser = async () => {
     props.updateIsFollowing(false)
     await supabase.from("followers_following")
-        .delete()
         .eq("follower_id", user.value.id,)
         .eq("following_id", props.user.id)
+        .delete()
     }
 
 </script>
 
 <template>
-    <div class="userbar-container" v-if="props.user">
-        <div class="top-content">
+    <div class="pb-75" v-if="props.user">
+        <div class="flex justify-between item-center ">
             <a-typography-title :level="2">{{props.user.username}}</a-typography-title>
             <div v-if="user">
                 <UploadPhotoModal 
@@ -47,25 +47,25 @@ const unfollowUser = async () => {
                 </div>
             </div>
         </div>
-        <div class="bottom-content">
-            <a-typography-title :level="5">{{props.userInfo.posts}} posts</a-typography-title>
-            <a-typography-title :level="5">{{props.userInfo.followers}} followers</a-typography-title>
-            <a-typography-title :level="5">{{props.userInfo.following}} following</a-typography-title>
+        <div class="flex items-center gap-4">
+            <a-typography-title class="!m-0 p-0" :level="5">{{props.userInfo.posts}} posts</a-typography-title>
+            <a-typography-title class="!m-0 p-0" :level="5">{{props.userInfo.followers}} followers</a-typography-title>
+            <a-typography-title class="!m-0 p-0" :level="5">{{props.userInfo.following}} following</a-typography-title>
         </div>
     </div>
-    <div class="userbar-container" v-else>
-        <div class="top-content">
-            <a-typography-title :level="2">User Not Found</a-typography-title>
+    <div class="pb-75" v-else>
+        <div class="flex justify-between item-center">
+            <a-typography-title class="" :level="2">User Not Found</a-typography-title>
         </div>
     </div>
 </template>
 
 <style scoped>
-.userbar-container {
+/* .userbar-container {
     padding-bottom: 75px;
-}
+} */
 
-.bottom-content {
+/* .bottom-content {
     display: flex;
     align-items: center;
 }
@@ -75,12 +75,12 @@ const unfollowUser = async () => {
     padding: 0;
     margin-right: 30px !important;
     align-items: center;
-}
+} */
 
-.top-content {
+/* .top-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+} */
 
 </style>

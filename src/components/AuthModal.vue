@@ -54,7 +54,7 @@ const title = props.isLogin ? 'Login' : 'Signup'
 
 <template>
   <div>
-    <a-button type="primary" @click="showModal" class="btn">{{title}}</a-button>
+    <a-button type="primary" @click="showModal" class="btn ml-2">{{title}}</a-button>
     <a-modal v-model:visible="visible" :title="title" @ok="handleOk">
       <template #footer>
         <a-button key="back" @click="handleCancel">Cancel</a-button>
@@ -68,12 +68,12 @@ const title = props.isLogin ? 'Login' : 'Signup'
           Submit
         </a-button>
       </template>
-      <div v-if="!loading" class="input-container">
-        <a-input class="input" v-if="!isLogin" v-model:value="userCredentials.username" placeholder="Username" />
-        <a-input class="input" v-model:value="userCredentials.email" placeholder="Email" />
-        <a-input class="input" v-model:value="userCredentials.password" placeholder="Password" type="password"/>
+      <div v-if="!loading" class="input-container h-32">
+        <a-input class="input !mt-1" v-if="!isLogin" v-model:value="userCredentials.username" placeholder="Username" />
+        <a-input class="input !mt-1" v-model:value="userCredentials.email" placeholder="Email" />
+        <a-input class="input !mt-1" v-model:value="userCredentials.password" placeholder="Password" type="password"/>
       </div>
-      <div v-else class="spinner">
+      <div v-else class="spinner flex items-center justify-center h-32">
         <a-spin />
       </div>
       <a-typography-text v-if="errorMessage" type="danger">{{ errorMessage }}</a-typography-text>
@@ -82,23 +82,23 @@ const title = props.isLogin ? 'Login' : 'Signup'
 </template>
 
 <style scoped>
-.btn {
+/* .btn {
     margin-left: 10px;
-}
+} */
 
-.input {
+/* .input {
     margin-top: 5px;
-}
+} */
 
-.input-container{
+/* .input-container{
   height: 120px;
-}
+} */
 
-.spinner {
+/* .spinner {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 120px;
-}
+} */
 
 </style>

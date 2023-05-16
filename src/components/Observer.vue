@@ -18,16 +18,16 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="observer" ref="root">
+    <div class="observer h-px w-16 bg-black" ref="root">
         
     </div>
 </template>
 
 <style scoped>
-.observer {
-    height: 2px;
+/* .observer {
+    height: 1px;
     width: 60px;
-    background-color: rgb(236, 236, 236);
-}
+    background-color: black
+} */
 
 </style>

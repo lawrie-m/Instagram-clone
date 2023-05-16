@@ -64,15 +64,16 @@ Finished vid 15.8. Start .9 on loading state
     <a-button @click="showModal">Upload Photo</a-button>
     <a-modal v-model:visible="visible" title="Upload Photo" @ok="handleOk">
         <div v-if="!loading">
-            <input type="file" accept=".jpeg,.png" @change="handleUploadChange">
-            <a-input 
+            <input class="mt-2.5" type="file" accept=".jpeg,.png" @change="handleUploadChange">
+            <a-input
+            class="!mt-2.5" 
             v-model:value="caption" 
             placeholder="Caption..." 
             :maxLength="50"
             />
             <a-typography-text v-if="errorMessage" type="danger">{{ errorMessage }}</a-typography-text>
         </div>
-        <div class="spinner" v-else>
+        <div class="flex items-center justify-center" v-else>
             <a-spin />
         </div>
     </a-modal>
@@ -80,14 +81,14 @@ Finished vid 15.8. Start .9 on loading state
 </template>
 
 <style scoped>
-input {
+/* input {
     margin-top: 10px;
-}
+} */
 
-.spinner{
+/* .spinner{
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} */
 
 </style>

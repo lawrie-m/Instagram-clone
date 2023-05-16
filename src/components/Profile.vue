@@ -111,7 +111,7 @@ onMounted(() => {
 <template>
     <Container>
         <div v-if="loggedInUser">
-        <div class="profile-container" v-if="!loading">
+        <div class="profile-container flex flex-col py-5 px-0" v-if="!loading">
             <UserBar
                 :key="$route.params.username" 
                 :user="user"
@@ -122,7 +122,7 @@ onMounted(() => {
             />
             <ImageGallery :posts="posts" />
         </div>
-        <div class="spinner" v-else>
+        <div class="spinner flex items-center justify-center h-8/10" v-else>
             <a-spin />
         </div>
         </div>
@@ -133,17 +133,17 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.profile-container { 
+/* .profile-container { 
     display: flex;
     flex-direction: column;
     padding: 20px 0;
-}
+} */
 
-.spinner {
+/* .spinner {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 85vh;
-}
+} */
 
 </style>

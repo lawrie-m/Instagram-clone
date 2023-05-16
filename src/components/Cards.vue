@@ -62,7 +62,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="timeline-container">
+    <div class="flex flex-col items-center py-5 px-0">
         <Card 
             v-for="post in posts" 
             :key="post.id" 
